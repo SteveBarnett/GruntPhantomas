@@ -13,6 +13,7 @@ module.exports = function(grunt) {
     phantomas: {
       dev: {
         options : {
+          // buildUi: false,
           assertions : {
             notFound: 0,
             cssCount: 2,
@@ -28,8 +29,24 @@ module.exports = function(grunt) {
             redirects: 0,
             assetsNotGzipped: 0
           },
-          // indexPath  : './phantomas/',
-          url        : 'http://example.com/'
+          url: 'http://example.com/',
+          group: {
+            'fbp' : [
+              'notFound',
+              'cssCount',
+              'jsCount',
+              'imageCount',
+              'webfontCount',
+              'cachingNotSpecified',
+              'nodesWithInlineCSS',
+              'imagesScaledDown',
+              'DOMidDuplicated',
+              'hiddenContentSize',
+              'jQueryVersionsLoaded',
+              'redirects',
+              'assetsNotGzipped'
+            ]
+          }
         }
       }
     }
